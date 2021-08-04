@@ -32,4 +32,5 @@ int main()
 		if(req_ind[ti]+1&&printf("\nElement found %d",count[ti]));
 		else printf("\nElement not found %d",count[ti]);
 	}
+	return 0;
 }

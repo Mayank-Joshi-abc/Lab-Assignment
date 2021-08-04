@@ -52,5 +52,6 @@ int main()
 		else
 			printf("\nKey not present");
 	}
+	return 0;
 }
 

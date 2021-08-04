@@ -34,17 +34,23 @@ int main()
 		ti=tl=*(nok+i);
 		//printf("\ntl = %d, ti = %d, nok+i = %d\n",tl,ti,*(nok+i));
 		//printf("Test conditions:\n(t1-1)>=0 %d also ((ti-1)==*(ele+i)) = %d",(ti-1)>=0,(ti-1)==*(ele+i));
-		while(((ti-1)>=0)&&(arr[ti-1]==*(ele+i)))
-		ti--;
-		while(((tl+1)<noe)&&(arr[tl+1]==*(ele+i)))
-		tl++;
-		*(nok+i) = tl - ti +1;
+		if(ti!=-1)
+		{
+			while(((ti-1)>=0)&&(arr[ti-1]==*(ele+i)))
+				ti--;
+			while(((tl+1)<noe)&&(arr[tl+1]==*(ele+i)))
+				tl++;
+			*(nok+i) = tl - ti +1;
+		}
 		//printf("\ntl = %d, ti = %d, nok+i(%d) = %d\n",tl,ti,i,*(nok+i));
 	}
 	for(i=0;i<noc;i++)
 	{
 	//	printf("\nkey Element %d occurs i = %d --- %d times",*(ele+i),i,*(nok+i));
-		printf("\nkey Element %d occurs %d times",*(ele+i),*(nok+i));
+		if(*(nok+i)!=-1)
+			printf("\n%d - %d",*(ele+i),*(nok+i));
+		else
+			printf("\nKey not present");
 	}
 }
 

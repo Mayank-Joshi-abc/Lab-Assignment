@@ -72,8 +72,8 @@ void mergeDivide(int arr[], int F, int L)
 }
 int main()
 {
-	int ti,i,n= 10;
-	int arr[10] = {10,9,8,7,6,5,4,3,2,1};
+//	int ti,i,n= 10;
+//	int arr[10] = {10,9,8,7,6,5,4,3,2,1};
 	
 //	for(ti=0;ti<n;ti++)
 //	{
@@ -81,12 +81,52 @@ int main()
 //		printf("%d ",arr[ti]);
 //	}
 //	printf("\n");
-	mergeDivide(arr,0,n-1);
+//	mergeDivide(arr,0,n-1);
 //	printf("\n?IN the end \n");
-	for(i=0;i<n;i++)
+//	for(i=0;i<n;i++)
+//	{
+//		printf("%d ",arr[i]);
+//	} 
+	int noc,i,*arr,noe,*rep,j;
+	scanf("%d",&noc);
+	rep = (int *)malloc(noc*sizeof(int));
+	for(i = 0;i<noc;i++)
 	{
-		printf("%d ",arr[i]);
-	} 
+		scanf("%d",&noe);
+		arr = (int *)malloc(noe*sizeof(int));
+//		printf("\nGOOD 1");
+		for(j=0;j<noe;j++)
+		{
+			scanf("%d",arr+j);
+		}
+		mergeDivide(arr,0,noe-1);
+		*(rep+i) = 0;
+//		printf("\n");
+//		for(j=0;j<noe;j++)
+//		{
+//			printf("%d ",*(arr+j));
+//		}
+		for(j=0;j<noe-1;j++)
+		{
+//			printf("\nrep = %d ",*(rep+i));
+//			printf("\n %d == %d",arr[j],arr[j+1]);
+//			system("pause");
+			if(arr[j] == arr[j+1])
+			{
+				*(rep+i) = 1;
+				break;
+			}
+		}
+		free(arr);
+	}
+	for(i = 0;i<noc;i++)
+	{
+		if(*(rep+i) == 1)
+			printf("\nYES");
+		else
+			printf("\nNO");
+	}
+	return 0;
 }
 
 

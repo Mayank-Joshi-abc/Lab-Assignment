@@ -3,26 +3,39 @@
 #include<math.h>
 int JS(int ar[], int n, int e,int * cnt)
 {
+	int prev,next;
 	*cnt = 0;
-	int jmp = sqrt(n);
-	int i=0,l=jmp;
-	while(l<n)
+	if(ar[0] == e)
 	{
-	//	printf("l = %d, n = %d",l,n);
-		(*cnt)++;
-		if(e<=ar[l])
-		break;
-		i = l;
-		l = l+jmp;
+		*cnt = 0;
+		return 0;
 	}
-	if(l>=n)
-		l=n-1;
-	for(;i<=l;i++)
+	prev = 0;
+	next = 1;
+	while(true)
 	{
 		(*cnt)++;
-	//	printf("\ni = %d, e = %d, arr[%d] = %d",i,e,i,ar[i]);
-		if(e == ar[i])
+		prev = next;
+		next = next *2;
+		if(next >= n)
+		{
+			next = n-1;
+		}
+		if(ar[next] == e)
+			return next;
+		if(e<ar[next])
+		{
+			break;
+		}
+	}
+	for(int i = prev; i<=next;i++)
+	{
+		(*cnt)++;
+		if(ar[i]>e)
+			return -1;
+		if(ar[i] == e )
 			return i;
+			
 	}
 	return -1;
 }
@@ -45,11 +58,10 @@ int main()
 	for(i =0;i<noc;i++)
 	{
 		if(i[vals] == -1)
-			printf("\nNot present, %d",*(its+i));
+			printf("\nNot present %d",*(its+i));
 		else
-			printf("\nPresent at %d, %d",vals[i] + 1,*(its+i));
+			printf("\nPresent %d",*(its+i));
 	}
-	system("pause");
 	return 0;
 }
 	

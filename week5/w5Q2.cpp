@@ -1,15 +1,6 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-/*
-3
-5
-5 4 3 2 1
-7
-6 9 4 9 3 9 7
-1
-0
-*/
 void Merge(vector<int> &arr,int i,int j)
 {
 	int m = (i+j)/2;
@@ -25,11 +16,8 @@ void Merge(vector<int> &arr,int i,int j)
 	for(int p = i;p<=j;p++)
 	{
 		arr[p] = *k;
-//		cout<<arr[p]<<" ";
 		k++;
-	}
-//	cout<<endl;
-	
+	}	
 }
 void merge(vector<int> &arr,int i,int j)
 {
@@ -64,11 +52,9 @@ int main(void)
 	for(auto &i : arr)
 	{
 		merge(i,0,i.size()-1);
-//		cout<<endl<<"Next vector"<<endl;
 	}
 	auto k = key.begin();
-	int sum;
-	int flag;
+	int sum, flag;
 	for(auto i : arr)
 	{
 		flag = 0;
@@ -84,13 +70,9 @@ int main(void)
 				break;
 			}
 			else if(sum>*k)
-			{
 				r++;
-			}
 			else
-			{
 				l++;
-			}
 		}
 		k++;
 		if(flag == 0)

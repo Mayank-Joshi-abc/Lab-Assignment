@@ -33,7 +33,6 @@ void dij(int V, vector<vector<int>> &List, vector<vector<int>> &Mat)
 	for(int i = 1;i<V;i++)
 	{
 		cout<<"\n";
-		//cout<<i<<"-->";
 		int p = i;
 		while(p!=-1)
 		{

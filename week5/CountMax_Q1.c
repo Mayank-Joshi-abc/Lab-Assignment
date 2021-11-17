@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<malloc.h>
-//COE count_of_element
 void Counting_Sort(char *arr, int n)
 {
 	int COE[26]= {0},i,maxind = -1,maxno = 1;

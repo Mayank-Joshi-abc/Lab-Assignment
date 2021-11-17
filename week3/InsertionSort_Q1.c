@@ -7,11 +7,11 @@ int main()
 	shft = (int*)malloc(noc*sizeof(int));
 	cmps = (int*)malloc(noc*sizeof(int));
 	noe = (int*)malloc(noc*sizeof(int));
-	arr = (int**)malloc(noc*sizeof(int **));
+	arr = (int**)malloc(noc*sizeof(int *));
 	for(i=0;i<noc;i++)
 	{
 		scanf("%d",noe+i);
-		*(arr+i) = (int*)malloc(*(noe)*sizeof(int));
+		*(arr+i) = (int*)malloc((*(noe+i))*sizeof(int));
 		for(j=0;j<*(noe+i);j++)
 		{
 			scanf("%d",&arr[i][j]);
@@ -21,27 +21,12 @@ int main()
 		for(j=1;j<*(noe+i);j++)
 		{
 			temp = arr[i][j];
-//			printf("\ntemp = %d",temp);
-			//printf("\n TEST CONDITION: %d", cmps[i]++);
 			for(k = j-1;k>=0&&((++cmps[i])&&temp<arr[i][k]);k--)
 			{
-//				printf("\nj = %d, k = %d",j,k);
 				(*(shft+i))++;
 				arr[i][k+1] = arr[i][k];
-//				printf("\n");
-//				for(l=0;l<*(noe+i);l++)
-//				{
-//					printf("%d ",arr[i][l]);
-//				}
-//				printf("\nshfts %d",*(shft+i));
 			}
 			arr[i][k+1] = temp;
-//			printf("\n");
-//			for(l=0;l<*(noe+i);l++)
-//			{
-//				printf("%d ",arr[i][l]);
-//			}
-//			printf("\nshfts %d",*(shft+i));
 		}
 	}
 	for(i=0;i<noc;i++)
@@ -58,25 +43,3 @@ int main()
 	free(shft);
 	free(cmps);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

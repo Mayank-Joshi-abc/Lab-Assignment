@@ -2,7 +2,6 @@
 using namespace std;
 int DepthFS(int V,int source, int dest, int reqNodes,vector<vector<int>> List,vector<vector<int>> Mat)
 {
-	//vector<bool> vis(V,false);
 	vector<int> dist(V,INT_MAX);
 	dist[source] = 0;
 	int minDist = INT_MAX;
@@ -16,7 +15,6 @@ int DepthFS(int V,int source, int dest, int reqNodes,vector<vector<int>> List,ve
 		prev = curr;
 		curr = st.top();
 		st.pop();
-		//vis[curr] = true;
 		if(curr == dest && count == reqNodes )
 		{
 			if(minDist>dist[curr])
@@ -27,17 +25,9 @@ int DepthFS(int V,int source, int dest, int reqNodes,vector<vector<int>> List,ve
 		bool flag  = false;
 		for(vector<int>::iterator i = List[curr].begin(); i!= List[curr].end();i++)
 		{
-			//if(!vis[*i])
-			//{
 				st.push(*i);
 				dist[*i] = dist[curr] + Mat[curr][*i];
 				flag = true;
-			//}
-		}
-		if(!flag && prev!=curr)
-		{
-			//count--;
-			//vis[curr] = false;
 		}
 		else if(prev != curr)
 			count++;
@@ -65,7 +55,6 @@ int main()
 	cin>>source;
 	cin>>dest;
 	cin>>edgesInBetween;
-	// vector<int> dis(V,INT_MAX);
 	int ans = DepthFS(V,source-1,dest-1,edgesInBetween, List,Mat);
 	if(ans == INT_MAX)
 	{

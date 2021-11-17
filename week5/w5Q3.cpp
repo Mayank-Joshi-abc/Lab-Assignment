@@ -12,13 +12,13 @@ int main()
 	cin>>n2;
 	for(int i = 0; i<n2;i++)
 		arr2.push_back(t&((ONEs)|scanf("%d",&t)));
-	auto a = arr1.cbegin();
-	auto b = arr2.cbegin();	
-	while(a!=arr1.cend()||b!=arr2.cend())
+	auto a = arr1.begin();
+	auto b = arr2.begin();	
+	while(a!=arr1.end()+1&&b!=arr2.end()+1)
 	{
 		if(*a == *b)
 			{
-				cout<<*a<<" "<<*b<<endl;
+				cout<<*a<<" ";
 				a++;
 				b++;
 			}
@@ -29,12 +29,3 @@ int main()
 	}
 	return 0;
 }
-
-
-
-
-
-
-
-
-

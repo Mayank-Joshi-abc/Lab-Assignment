@@ -56,6 +56,6 @@ int main()
 			}
 		}		
 	}
-	cout<<"Minimum Spanning Weight: "weight;
+	cout<<"Minimum Spanning Weight: "<<weight;
 	return 0;
 }

@@ -32,7 +32,6 @@ int main()
 		w = ar[i].first.second.first;
 		if(w<=capacity)
 		{
-			// cout<<"\npl here\n";
 			capacity = capacity - w;
 			val += ar[i].first.second.second;
 			answers[ar[i].second-1] = w;
@@ -49,7 +48,6 @@ int main()
 	}
 	cout<<"\nMaximum value : "<<val;
 	cout<<"\nitem-weight";
-	// i = V-1;
 	for(auto ii = ar.end()-1; ii >= ar.begin(); ii--)
 	{
 		cout<<"\n"<<ii->second<<"-"<< answers[ii->second - 1];

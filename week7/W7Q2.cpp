@@ -35,7 +35,6 @@ void bell(int V, vector<vector<int>> &List, vector<vector<int>> &Mat, int source
 	for(int i = 0;i<V;i++)
 	{
 		cout<<"\n";
-		//cout<<i<<"-->";
 		int p = i;
 		do
 		{
@@ -62,15 +61,6 @@ int main()
 				List[i].push_back(j);
 		}
 	}
-	// cout<<"\n";
-	// for(auto i : List)
-	// {
-	// 	for(auto j : i)
-	// 	{
-	// 		cout<<j<<" ";
-	// 	}
-	// 	cout<<"\n";
-	// }
 	int source;
 	cin>>source;
 	bell(V,List,Mat,source-1);

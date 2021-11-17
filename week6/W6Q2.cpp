@@ -65,14 +65,6 @@ int main()
 	cin>>v;
 	Graph G(v);
 	G.takeInput();
-	// cout<<endl<<true?"Yes":"No";
 	cout<<endl<<(G.isBipartile()?"Not Bipartile":"Yes Bipartile");
 	return 0;
 }
-
-/*
-cout<<true?"Yes":"No";  //1
-cout<<false?"Yes":"No"; //0
-cout<<(true?"Yes":"No");//Yes
-cout<<(true?"Yes":"No");//No
-*/

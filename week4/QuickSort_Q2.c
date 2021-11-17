@@ -7,32 +7,17 @@ int Qcon(int arr[],int F,int L)
 	int j = F-1;
 	for(i = F;i<L;i++)
 	{
-		printf("\nif(%d<=%d):%s",arr[i],p,arr[i]<=p?"swapping":"loop");
 		if(arr[i]<=p)
 		{
-			printf("\nSwapping %d<-->%d\n",arr[i],arr[j+1]);
-			system("pause");
-			printf("\n");
 			j++;
 			temp = arr[i];
 			arr[i] = arr[j];
 			arr[j] = temp;
 		}
 	}
-	printf("\n%d\n",j);
-//	if(j == -1)
-//	{
-//		j = L-1;
-//	}
-//	else
-//	{
-		printf("\nSwapping after loop %d<-->%d\n",arr[L],arr[j+1]);
-		system("pause");
-		printf("\n");
 		temp = arr[L];
 		arr[L] = arr[j+1];
 		arr[j+1] = temp;
-//	}
 	return j+1;
 }
 void Qdivide(int arr[], int F, int L)

@@ -17,12 +17,6 @@ int Pivot(int *arr,int i,int j)
 	temp = *(arr+i);
 	*(arr+i) = *(arr+b);
 	*(arr+b) = temp;
-//	printf("\n");
-//	for(;ti<=j;ti++)
-//	{
-//		printf("%d ",*(arr+ti));
-//	}
-//	printf("\ncurr ind, b = %d\n",b);
 	return b;
 }
 int QS(int *arr, int n,int key)
@@ -30,11 +24,7 @@ int QS(int *arr, int n,int key)
 	int ind,i=0,j=n-1;
 	while(i<j)
 	{
-//		printf("i = %d j = %d\n",i,j);
-//		system("pause");
-		ind = Pivot(arr,i,j);//3
-//		printf("\nind = %d\n",ind);
-//		printf("\nkey = %d, returned ind = %d",key,ind);
+		ind = Pivot(arr,i,j);
 		if(ind == key-1)
 		return ind;
 		if(key-1<ind)
@@ -64,8 +54,6 @@ int main()
 			scanf("%d",*(arr+i)+j);
 		}
 		scanf("%d",key+i);
-//		printf("i = %d\n",i);
-//		system("pause");
 	}
 	for(i=0;i<noc;i++)
 	{
